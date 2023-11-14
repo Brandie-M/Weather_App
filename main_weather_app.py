@@ -3,11 +3,6 @@ import tkinter as tk
 
 key = "ad6393dd49254ee9909195433233010"
 
-# current_conditions = requests.get(f"http://api.weatherapi.com/v1/current.json?key=ad6393dd49254ee9909195433233010&q={location}&aqi=no")
-# print(type(current_conditions.json()))
-# print(current_conditions.json())
-
-
 def get_current_weather():
     location = location_input_field.get()
 
@@ -112,7 +107,9 @@ temperature_F = tk.Label(
     root,
     text="",
     font=100,
-    background="white"
+    background="white",
+    pady=10,
+    padx=10
 )
 temperature_F.pack(
     padx=0,
