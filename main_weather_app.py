@@ -54,6 +54,11 @@ def get_current_weather():
 
         condition_icon = find_icon(conditions_icon_code)
 
+        temperature.pack()
+        more_info.pack()
+        current_conditions_status.pack()
+        current_conditions_icon.pack()
+
         if country != "USA" and country != "United States of America":
             weather_location.config(text=f"{city}, {country}")
             temperature.config(text=f"{temp_C}° C")
@@ -92,7 +97,12 @@ def get_current_weather():
 
     else:
         weather_location.config(text="Please enter a valid City or Zip Code.")
-        temperature.config(text="")
+        temperature.pack_forget()
+        more_info.pack_forget()
+        current_conditions_status.pack_forget()
+        current_conditions_icon.pack_forget()
+
+
 
 def find_icon(icon_code):
     with open("weather_conditions.json", "r") as file:
@@ -101,6 +111,7 @@ def find_icon(icon_code):
             if condition["code"] == icon_code:
                 print(condition["icon"])
                 return condition["icon"]
+
 
 def display_help(button_text):
     if button_text == "Available Features":
@@ -127,8 +138,10 @@ def display_help(button_text):
                           "\n    2. You have entered a valid Zip Code or City name."
                           )
 
+
 def pass_button_text(button_text):
     display_help(button_text)
+
 
 #############################
 #  INTERACTIVE GUI          #
@@ -152,6 +165,9 @@ heading_label.pack(
     pady=20
 )
 
+
+### Weather Display  ###
+
 # Input label
 location_input_label = tk.Label(root, text="Enter a City, State, City, Country, or Zip Code:")
 location_input_label.pack(padx=3,pady=3)
@@ -159,7 +175,6 @@ location_input_label.pack(padx=3,pady=3)
 # Input field
 location_input_field = tk.Entry(root, background="LightSteelBlue1")
 location_input_field.pack(padx=10, pady=10)
-
 
 #submit button
 submit_button = tk.Button(
@@ -182,7 +197,7 @@ inner_weather_frame_right = tk.Frame(outer_weather_frame, bg="white")
 inner_weather_frame_right.pack(side=tk.RIGHT, padx=20, pady=20)
 
 
-# Shows weather location
+# Display weather location
 weather_location = tk.Label(inner_weather_frame_left, text="", background="white", justify="left")
 weather_location.pack()
 
@@ -201,6 +216,11 @@ current_conditions_status.pack()
 # More info display
 more_info = tk.Label(inner_weather_frame_right, text="", background="white", justify="left")
 more_info.pack()
+
+
+#####################
+# Trivia Section Display   #
+####################
 
 # Trivia Frame
 frame1 = tk.Frame(root, bg="white")
