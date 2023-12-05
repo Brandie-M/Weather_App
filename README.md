@@ -31,7 +31,7 @@ python main.py
 Enter a city, state, or ZIP code in the input field and click "Get Current Weather" to view the weather data. Click "Get Random Weather Trivia" for interesting trivia.
 
 ## License
-This project is licensed under the [MIT License](https://chat.openai.com/c/LICENSE).
+This project is licensed under the [MIT License](http://opensource.org/licenses/MIT).
 
 ## Acknowledgments
   - **Weather data provided by [WeatherAPI](https://www.weatherapi.com/).
