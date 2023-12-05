@@ -31,5 +31,5 @@ python main.py
 Enter a city, state, or ZIP code in the input field and click "Get Current Weather" to view the weather data. Click "Get Random Weather Trivia" for interesting trivia.
 
 ## Acknowledgments
-  - **Weather data provided by [WeatherAPI](https://www.weatherapi.com/).
-  - **Trivia data served by a custom Flask microservice.
+  - Weather data provided by [WeatherAPI](https://www.weatherapi.com/).
+  - Trivia data served by a custom Flask microservice.
